@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+    --purple500: #281154;
+    --purple300: #270082;
+    --purple600: #1b0058;
+    --red600: #dc0000;
+    --body: #f9f6ff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin: 50px;
+}
+
+button{
+    padding: 10px 15px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: 0.2 ease-in-out;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+
+ul {
+    list-style: none;
+}
+
+a {
+   text-decoration: none; 
+   color: white;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.navbar {
+    background-color: var(--purple300);
+    position: fixed;
+    width: 100%;
+    /* top: 0; */
+    z-index: 100;
+    transition: all 0.3 ease;
+}
+
+.navbar .content {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+nav ul li:hover {
+    border-bottom: 2px solid white;
+    transition: 0.1s ease-in;
+}
+
+.icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+/* Responsive navigation Section */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .navbar .content {
+        padding: 20px;
+    }
+    .icon {
+        display: block;
+    }
+    .icon.hide {
+        display: none;
+    }
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 200px;
+        background: var(--purple300);
+        display: block;
+        padding: 50px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu-list.active {
+        left: 0%;
+    }
+    .navbar .menu-list li {
+        margin-top: 40px;
+    }
+    .navbar .menu-list li a {
+        font-size: 18px;
+    }
+}
+
+/* Hero Section */
+
+.hero_section {
+    background-image: url(images/heroimage.png);
+    height: 100vh;
+    display: grid;
+    color: white;
+    place-items: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero_section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero_section h1 {
+    font-size: 86px;
+}
+
+/* Responsive Hero Section */
+.hero_section h3 {
+    font-size: 26px;
+}
+
+@media (max-width: 768px) {
+     .hero_section .container h1 {
+       font-size: 30px;
+    } 
+    .hero_section .container h3 {
+        font-size: 12px;
+        padding: 0 14px;
+    } 
+     .hero_section .container p {
+        font-size: 8px;
+        padding: 0 30px;
+    }
+}
+
+/* Music Section */
+
+.music_section {
+    padding-top: 50px;
+    background: var(--purple500);
+}
+
+.music_section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.music_section .container h2 {
+    font-size: 38px;
+}
+
+.music_section .container p {
+    font-size: 13px;
+}
+
+.ipad-iphone-image {
+    margin-top: -400px;
+    position: relative;
+    top: 400px;
+}
+
+.primary_btn {
+    background-color: var(--red600);
+    color: white;
+    border-radius: 50px;
+}
+
+.secondary_btn {
+    background-color: var(--purple300);
+    color: white;
+}
+
+.secondary_btn:hover {
+    background-color: white;
+    color: var(--purple600);
+    border: 1px solid navy;
+}
+
+.about_music {
+    padding-top: 500px;
+    display: grid;
+    place-items: center;
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.video_section {
+    background-image: url(images/video.png);
+    min-height: 600px;
+    display: grid;
+    place-items: center;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.video_section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: -300px;
+}
+ 
+/* Responsive Music Section */
+@media (max-width: 768px) {
+    .music_section .container h2 {
+        font-size: 20px;
+    } 
+    .music_section .container h2 span {
+        font-size: 20px;
+    }
+    .music_section .container h3 {
+        font-size: 18px;
+    }
+    .music_section .container p {
+        font-size: 8px;
+        padding: 0 20px;
+    }
+    .primary_btn {
+        font-size: 10px;
+        border-radius: 0px;
+    }
+    .ipad-iphone-image {
+        margin-top: -80px;
+        top: 120px;
+    }
+    .ipad-iphone-image img {
+        max-width: 100%;
+        height: auto;
+        padding: 0 20px;
+    }
+    .about_music {
+        padding-top: 200px;
+    }
+    .about_music h3 {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .about_music p {
+       font-size: 10px; 
+       padding: 0 10px;
+    }
+    .about_music .secondary_btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    .mac-image img {
+        max-width: 100%;
+        height: auto;
+        padding: 0 30px;
+    }
+    .video_section .container h3 {
+        font-size: 14px;
+        padding: 20px 30px;
+    }
+    .video_section .container p {
+        font-size: 10px;
+        padding: 0 40px;
+    }
+}
+
+/* Giftcard Section */
+
+.giftcard_section {
+   display: flex;
+   justify-content: center;
+   margin: 100px 0;
+   gap: 70px;
+   scroll-margin: 120px;
+}
+
+.gift_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive Gift Card Section */
+@media (max-width: 768px) {
+    .giftcard_section {
+        margin: 50px 0;
+        gap: 10px;
+        padding: 0 20px;
+    }
+    .gift_card  img {
+        max-width: 100%;
+    }
+    .gift_content {
+        gap: 10px;
+    }
+    .gift_content h3 {
+        font-size: 12px;
+    }
+    .gift_content p {
+        font-size: 8px;
+    }
+    .gift_content .secondary_btn {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+}
+
+.upper_footer {
+    background-color: var(--purple600);
+    padding: 20px;
+}
+
+.upper_footer .container {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+
+.upper_footer h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+}
+
+.lower_footer {
+    background-color: var(--purple300);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+/* Responsive Footer Section */
+
+@media (max-width: 768px) {
+    .upper_footer .container .footer_links h4 {
+        font-size: 12px;
+    }
+    .upper_footer .container .footer_links ul li {
+        font-size: 8px;
+    }
+    .lower_footer p {
+        font-size: 14px;
+    }
+}
+
+
+
